@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App =() => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div id="page-container">
+        <header>
+          <h1>MoneySwap</h1>
+        </header>
+
+        <main>
+          <h3>
+            ⬇ Fill out the form below ⬇
+          </h3>
+
+          <table>
+            <tbody>
+              <tr>
+                <th className="description">Original Currency:</th>
+                <th>
+                  <select>
+                      <option>originalCurrency</option>
+                  </select>
+                </th>
+              </tr>
+              <tr>
+                <th className="description">Amount:</th>
+                <th>
+                  <input></input>
+                </th>
+              </tr>
+              <tr>
+                <th className="description">Exchanged Currency:</th>
+                <th>
+                    <select>
+                      <option>exchangedCurrency</option>
+                    </select>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+        
+      </div>
   );
 }
 
