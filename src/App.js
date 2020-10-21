@@ -66,6 +66,13 @@ const App = () => {
           setOrignalCurrency={setOrignalCurrency}
         />
       </main>
+      <footer>
+        <div className="horizontal-center">
+          <a href="https://github.com/Ali-Aftab/Money-Swap">
+            Source: <i className="fa fa-github" />
+          </a>
+        </div>
+      </footer>
     </div>
   );
 };
