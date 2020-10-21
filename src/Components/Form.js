@@ -1,6 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 const Form = () => {
+    
+    const [currencies, setCurrencies] = useState([]);
+    const [amount, setAmount] = useState(0);
+    const [convertedAmount, setConvertedAmount] = useState(null)
+    const [orignalCurrency, setOrignalCurrency] = useState("EUR");
+    const [exchangedCurrency, setExchangedCurrency] = useState("EUR");
+
+    useEffect(() => {
+        
+    })
+
+
     return (
         <table>
             <tbody>
