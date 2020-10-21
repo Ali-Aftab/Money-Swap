@@ -10,3 +10,7 @@ To run this application:
 2. Access the folder with `cd Money-Swap`
 3. Install the required modules with `npm intall`
 4. Type `npm run start` to use Money Swap!
+
+<p align="center">
+            <img src="/public/readMe.png" width="50%" height="50%" >
+</p>
