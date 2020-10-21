@@ -4,6 +4,7 @@ import currency from "currency.js";
 import "./App.css";
 import Form from "./Components/Form";
 import FormResult from "./Components/FormResult";
+import Footer from "./Components/Footer";
 
 const App = () => {
   const [currencies, setCurrencies] = useState(["EUR"]);
@@ -12,6 +13,7 @@ const App = () => {
   const [orignalCurrency, setOrignalCurrency] = useState("EUR");
   const [exchangedCurrency, setExchangedCurrency] = useState("EUR");
 
+  // Grabs the Currency List for the First Render
   useEffect(() => {
     const fetchAPI = async () => {
       try {
@@ -32,6 +34,7 @@ const App = () => {
     fetchAPI();
   }, []);
 
+  //Functionality for
   if (orignalCurrency !== exchangedCurrency) {
     const fetchNewRate = async () => {
       try {
@@ -67,13 +70,7 @@ const App = () => {
           setOrignalCurrency={setOrignalCurrency}
         />
       </main>
-      <footer>
-        <div className="horizontal-center">
-          <a href="https://github.com/Ali-Aftab/Money-Swap">
-            Source: <i className="fa fa-github" />
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
