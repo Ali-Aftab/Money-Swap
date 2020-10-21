@@ -24,7 +24,7 @@ const Form = (props) => {
         <tr>
           <th className="description">Amount:</th>
           <th>
-            <input></input>
+            <input onChange={(event) => setAmount(event.target.value)}></input>
           </th>
         </tr>
         <tr>

@@ -32,7 +32,19 @@ const App = () => {
   }, []);
 
   if (orignalCurrency !== exchangedCurrency) {
-    console.log(exchangedCurrency, orignalCurrency);
+    const fetchNewRate = async () => {
+      try {
+        const fetchRateDiff = await axios.get(
+          `https://api.exchangeratesapi.io/latest?base=${orignalCurrency}`
+        );
+        const exchangeRateDiff = fetchRateDiff.data.rates[exchangedCurrency];
+        const convertedTheAmount = Number(amount * exchangeRateDiff).toFixed(2);
+        setConvertedAmount(convertedTheAmount);
+      } catch (error) {
+        window.alert("Error occured during Exchanging");
+      }
+    };
+    fetchNewRate();
   }
 
   return (
