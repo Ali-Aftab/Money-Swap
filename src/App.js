@@ -22,15 +22,18 @@ const App = () => {
         for (let key in result.data.rates) {
           currenciesList.push(key);
         }
-
+        setCurrencies(currenciesList);
         return currenciesList;
       } catch (error) {
         window.alert(`Error with API: ${error}`);
       }
     };
-    const newList = fetchAPI();
-    setCurrencies(newList);
+    fetchAPI();
   }, []);
+
+  if (orignalCurrency !== exchangedCurrency) {
+    console.log(exchangedCurrency, orignalCurrency);
+  }
 
   return (
     <div id="page-container">
@@ -42,8 +45,12 @@ const App = () => {
         <Form
           currencies={currencies}
           setAmount={setAmount}
-          setExchangedCurrency={setOrignalCurrency}
+          setExchangedCurrency={setExchangedCurrency}
+          setOrignalCurrency={setOrignalCurrency}
         />
+        <button onClick={() => console.log(orignalCurrency, exchangedCurrency)}>
+          hi
+        </button>
       </main>
     </div>
   );

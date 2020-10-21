@@ -2,16 +2,23 @@ import React from "react";
 import { SelectionCard } from "./SelectionCard";
 
 const Form = (props) => {
-  const { currencies } = props;
+  const {
+    currencies,
+    setAmount,
+    setExchangedCurrency,
+    setOrignalCurrency,
+  } = props;
   return (
     <table>
       <tbody>
         <tr>
           <th className="description">Original Currency:</th>
           <th>
-            <select>
-              <option>originalCurrency</option>
-            </select>
+            <SelectionCard
+              currencies={currencies}
+              name={"exchangedCurrency"}
+              changeCurrency={setOrignalCurrency}
+            />
           </th>
         </tr>
         <tr>
@@ -23,7 +30,11 @@ const Form = (props) => {
         <tr>
           <th className="description">Exchanged Currency:</th>
           <th>
-            <SelectionCard currencies={currencies} name={""} />
+            <SelectionCard
+              currencies={currencies}
+              name={"exchangedCurrency"}
+              changeCurrency={setExchangedCurrency}
+            />
           </th>
         </tr>
       </tbody>
