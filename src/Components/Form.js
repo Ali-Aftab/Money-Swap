@@ -24,10 +24,7 @@ const Form = (props) => {
         <tr>
           <th className="description">Amount:</th>
           <th>
-            <input
-              pattern="^\d*(\.\d{0,2})?$"
-              onChange={(event) => setAmount(event.target.value)}
-            ></input>
+            <input onChange={(event) => setAmount(event.target.value)}></input>
           </th>
         </tr>
         <tr>
