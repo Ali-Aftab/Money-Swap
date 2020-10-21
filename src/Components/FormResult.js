@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const FormResult = () => {
-    return (
-        <h3>
-            ⬇ Fill out the form below ⬇
-        </h3>
-    )
-}
+  return <h3>⬇ Fill out the form below ⬇</h3>;
+};
 
-export default FormResult
+export default FormResult;
