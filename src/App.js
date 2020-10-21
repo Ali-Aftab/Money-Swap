@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import currency from "currency.js";
 import "./App.css";
 import Form from "./Components/Form";
 import FormResult from "./Components/FormResult";
@@ -38,8 +39,8 @@ const App = () => {
           `https://api.exchangeratesapi.io/latest?base=${orignalCurrency}`
         );
         const exchangeRateDiff = fetchRateDiff.data.rates[exchangedCurrency];
-        const convertedTheAmount = Number(amount * exchangeRateDiff).toFixed(2);
-        setConvertedAmount(convertedTheAmount);
+        const convertedTheAmount = currency(amount).multiply(exchangeRateDiff);
+        setConvertedAmount(convertedTheAmount.value);
       } catch (error) {
         window.alert("Error occured during Exchanging");
       }
