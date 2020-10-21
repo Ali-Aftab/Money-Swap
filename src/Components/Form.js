@@ -16,7 +16,7 @@ const Form = (props) => {
           <th>
             <SelectionCard
               currencies={currencies}
-              name={"exchangedCurrency"}
+              name={"orignalCurrency"}
               changeCurrency={setOrignalCurrency}
             />
           </th>

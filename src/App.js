@@ -53,16 +53,18 @@ const App = () => {
         <h1>MoneySwap</h1>
       </header>
       <main>
-        <FormResult />
+        <FormResult
+          amount={amount}
+          convertedAmount={convertedAmount}
+          exchangedCurrency={exchangedCurrency}
+          orignalCurrency={orignalCurrency}
+        />
         <Form
           currencies={currencies}
           setAmount={setAmount}
           setExchangedCurrency={setExchangedCurrency}
           setOrignalCurrency={setOrignalCurrency}
         />
-        <button onClick={() => console.log(orignalCurrency, exchangedCurrency)}>
-          hi
-        </button>
       </main>
     </div>
   );
