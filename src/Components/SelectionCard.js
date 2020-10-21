@@ -1,4 +1,5 @@
 import React from "react";
+import symbols from "../symbols";
 
 export const SelectionCard = (props) => {
   const { currencies, name, changeCurrency } = props;
@@ -11,7 +12,7 @@ export const SelectionCard = (props) => {
       {currencies.map((country) => {
         return (
           <option key={country} value={country}>
-            {[country]}
+            {symbols[country]}
           </option>
         );
       })}
