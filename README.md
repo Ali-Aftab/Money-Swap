@@ -8,7 +8,7 @@ To run this application:
 
 1. In your terminal type `git clone https://github.com/Ali-Aftab/Money-Swap`
 2. Access the folder with `cd Money-Swap`
-3. Install the required modules with `npm intall`
+3. Install the required modules with `npm install`
 4. Type `npm run start` to use Money Swap!
 
 <p align="center">
