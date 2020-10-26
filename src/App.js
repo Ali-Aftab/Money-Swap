@@ -35,21 +35,25 @@ const App = () => {
   }, []);
 
   //Functionality for
-  if (orignalCurrency !== exchangedCurrency) {
-    const fetchNewRate = async () => {
-      try {
-        const fetchRateDiff = await axios.get(
-          `https://api.exchangeratesapi.io/latest?base=${orignalCurrency}`
-        );
-        const exchangeRateDiff = fetchRateDiff.data.rates[exchangedCurrency];
-        const convertedTheAmount = currency(amount).multiply(exchangeRateDiff);
-        setConvertedAmount(convertedTheAmount.value);
-      } catch (error) {
-        window.alert("Error occured during Exchanging");
-      }
-    };
-    fetchNewRate();
-  }
+  useEffect(() => {
+    if (amount > 0 && orignalCurrency !== exchangedCurrency) {
+      const fetchNewRate = async () => {
+        try {
+          const fetchRateDiff = await axios.get(
+            `https://api.exchangeratesapi.io/latest?base=${orignalCurrency}`
+          );
+          const exchangeRateDiff = fetchRateDiff.data.rates[exchangedCurrency];
+          const convertedTheAmount = currency(amount).multiply(
+            exchangeRateDiff
+          );
+          setConvertedAmount(convertedTheAmount.value);
+        } catch (error) {
+          window.alert("Error occured during Exchanging");
+        }
+      };
+      fetchNewRate();
+    }
+  });
 
   return (
     <div id="page-container">
