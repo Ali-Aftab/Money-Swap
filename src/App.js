@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import currency from "currency.js";
 import "./App.css";
@@ -34,7 +34,7 @@ const App = () => {
     fetchAPI();
   }, []);
 
-  //Functionality for
+  //Functionality for converting currencies
   useEffect(() => {
     if (amount > 0 && orignalCurrency !== exchangedCurrency) {
       const fetchNewRate = async () => {
@@ -53,7 +53,7 @@ const App = () => {
       };
       fetchNewRate();
     }
-  });
+  }, [amount, orignalCurrency, exchangedCurrency]);
 
   return (
     <div id="page-container">

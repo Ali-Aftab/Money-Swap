@@ -8,6 +8,7 @@ const Form = (props) => {
     setExchangedCurrency,
     setOrignalCurrency,
   } = props;
+
   return (
     <table>
       <tbody>
