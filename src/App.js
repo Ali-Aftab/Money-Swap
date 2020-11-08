@@ -34,7 +34,7 @@ const App = () => {
     fetchAPI();
   }, []);
 
-  //Functionality for converting currencies
+  //Functionality for converting currencies and updating Currency List & Rates
   useEffect(() => {
     if (amount > 0 && orignalCurrency !== exchangedCurrency) {
       const fetchNewRate = async () => {
